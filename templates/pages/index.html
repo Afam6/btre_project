@@ -2,9 +2,11 @@
 {% load static %}
 {% load humanize %}
 
+{% block title %} | Welcome {% endblock %}
+
 {% block content %}
-  <!-- Showcase -->
-  <section id="showcase">
+    <!-- Showcase -->
+    <section id="showcase">
       <div class="container text-center">
         <div class="home-search p-5">
           <div class="overlay p-5">
@@ -64,7 +66,11 @@
         </div>
       </div>
     </section>
-  
+    
+    <br>
+    <!-- Alerts -->
+    {% include 'partials/_alerts.html' %}
+
     <!-- Listings -->
     <section id="listings" class="py-5">
       <div class="container">
@@ -72,7 +78,7 @@
         <div class="row">
           {% if listings %}
             {% for listing in listings %}
-              <!-- Listing 1 -->
+              <!-- Listing -->
               <div class="col-md-6 col-lg-4 mb-4">
                 <div class="card listing-preview"> 
                   <img class="card-img-top" src="{{ listing.photo_main.url }}" alt="">
